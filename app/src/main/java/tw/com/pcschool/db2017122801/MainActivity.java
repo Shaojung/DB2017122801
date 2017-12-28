@@ -21,6 +21,7 @@ public class MainActivity extends AppCompatActivity {
     public void click2(View v)
     {
         Intent it = new Intent(MainActivity.this, SecActivity.class);
+        it.putExtra("data", "My Value");
         startActivity(it);
     }
 }
