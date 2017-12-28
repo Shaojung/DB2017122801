@@ -4,6 +4,7 @@ import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.EditText;
 
 public class Main3Activity extends AppCompatActivity {
 
@@ -14,8 +15,10 @@ public class Main3Activity extends AppCompatActivity {
     }
     public void click3(View v)
     {
+        EditText ed3;
+        ed3 = findViewById(R.id.editText3);
         Intent it = new Intent();
-        it.putExtra("myresult", "DEF456");
+        it.putExtra("myresult", ed3.getText().toString());
         setResult(RESULT_OK , it);
         finish();
     }
