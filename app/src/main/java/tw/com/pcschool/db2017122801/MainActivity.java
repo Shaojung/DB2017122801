@@ -8,12 +8,13 @@ import android.widget.EditText;
 import android.widget.TextView;
 
 public class MainActivity extends AppCompatActivity {
-    TextView tv;
+    TextView tv, tv3;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         tv = findViewById(R.id.textView);
+        tv3 = findViewById(R.id.textView3);
     }
     public void click1(View v)
     {
@@ -49,7 +50,10 @@ public class MainActivity extends AppCompatActivity {
         }
         if (requestCode == 456)
         {
-
+            if (resultCode == RESULT_OK)
+            {
+                tv3.setText(data.getStringExtra("myresult"));
+            }
         }
 
     }
