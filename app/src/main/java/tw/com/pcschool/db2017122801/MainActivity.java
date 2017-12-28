@@ -32,12 +32,24 @@ public class MainActivity extends AppCompatActivity {
         startActivityForResult(it, 123);
     }
 
+    public void click4(View v)
+    {
+        Intent it = new Intent(MainActivity.this, Main3Activity.class);
+        startActivityForResult(it, 456);
+    }
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
-        if (resultCode == RESULT_OK)
+        if (requestCode == 123)
         {
-            tv.setText(data.getStringExtra("myresult"));
+            if (resultCode == RESULT_OK)
+            {
+                tv.setText(data.getStringExtra("myresult"));
+            }
+        }
+        if (requestCode == 456)
+        {
+
         }
 
     }
