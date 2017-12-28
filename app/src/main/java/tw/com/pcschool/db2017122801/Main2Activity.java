@@ -21,6 +21,6 @@ public class Main2Activity extends AppCompatActivity {
     }
     public void clickCancel(View v)
     {
-
+        finish();
     }
 }

@@ -35,6 +35,10 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
-        tv.setText(data.getStringExtra("myresult"));
+        if (resultCode == RESULT_OK)
+        {
+            tv.setText(data.getStringExtra("myresult"));
+        }
+
     }
 }
