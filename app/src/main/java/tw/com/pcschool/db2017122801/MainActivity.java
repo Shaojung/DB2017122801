@@ -13,10 +13,10 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        tv = findViewById(R.id.textView);
     }
     public void click1(View v)
     {
-        tv = findViewById(R.id.textView);
         tv.setText("123");
     }
     public void click2(View v)
@@ -29,6 +29,12 @@ public class MainActivity extends AppCompatActivity {
     public void click3(View v)
     {
         Intent it = new Intent(MainActivity.this, Main2Activity.class);
-        startActivity(it);
+        startActivityForResult(it, 123);
+    }
+
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+        tv.setText(data.getStringExtra("myresult"));
     }
 }
